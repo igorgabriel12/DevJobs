@@ -1,0 +1,53 @@
+[X] - Criar app em flutter
+[X] - Desenvolver fluxo
+[X] - Criar estrutura de páginas
+[X] - Escolher uma UI para seguir (cores e padrão de layout)
+{ primarydark: #182836, primary: #1b2b39, primary_light: #273645, secondary: #2cf0b3, 
+  primaryTextColor: #535c64, secondaryTextColor: #8f97a2, iconsColor: #738090, 
+  backgroundScreenColor: #ecf0f3, backgroundCard: #f7f7f7 }
+[ ] - Subir projeto para o githut
+
+[ ] TELA LOGIN
+- Logo
+- Campo e-mail e senha
+- Botão logar
+- Botão criar conta
+
+[ ] TELA CRIAR CONTA
+- Foto
+- Nome
+- E-mail
+- Senha e Confirmar senha
+- Botão voltar
+- Botão criar
+
+[ ] TELA HOME
+- Listar as vagas em cards utilizando da localização
+* Filtro
+  - Nome da vaga
+  - Full Time
+  - Localização
+
+[ ] TELA DETALHES
+- Tipo da vaga              "type"
+- Foto da empresa           "company_logo"
+- Data criação da vaga      "created_at"
+- Nome da empresa           "company"
+- Link do site da empresa   "company_url"  
+- Local da vaga             "location"
+- Título da vaga            "title"
+- Descrição da vaga         "description"
+- Como se aplicar           "how_to_apply"
+
+[ ] TELA SOBRE
+- Minha foto
+- Meu nome
+- Tema do app
+- Objetivo do app
+
+[ ] PERFIL DO USUÁRIO
+- Foto
+- Nome
+- E-mail
+* Possibilidade de alterar(nome, foto e senha)
+
