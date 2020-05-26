@@ -1,16 +1,5 @@
+import 'package:dev_jobs/src/pages/home.dart';
 import 'package:flutter/material.dart';
-
-extension ColorExtension on String {
-  toColor() {
-    var hexColor = this.replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    if (hexColor.length == 8) {
-      return Color(int.parse("0x$hexColor"));
-    }
-  }
-}
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -31,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: ['#1b2b39'.toColor(), '#182836'.toColor()]),
+            colors: [Color(0xFF1b2b39), Color(0xFF182836)]),
       ),
       child: Form(
         key: _formKey,
@@ -91,14 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      print("Container clicked");
-                      //  if (_formKey.currentState.validate()) {
-                      //   setState(() {
-                      //     double peso = double.parse(txtPeso.text);
-                      //     double altura = double.parse(txtAltura.text);
-                      //     double imc = peso / pow(altura, 2);
-                      //     _resultado = "Resultado\nIMC= ${imc}";
-                      //   });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
                     },
                     child: Container(
                       alignment: Alignment.center,
@@ -109,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               blurRadius: 1.0,
                             ),
                           ],
-                          color: "#4A65B0".toColor(),
+                          color: Color(0xFF4A65B0),
                           borderRadius:
                               BorderRadius.all(Radius.circular(25.0))),
                       height: 45.0,
@@ -126,14 +111,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ])),
             InkWell(
               onTap: () {
-                print("Container clicked");
-                //  if (_formKey.currentState.validate()) {
-                //   setState(() {
-                //     double peso = double.parse(txtPeso.text);
-                //     double altura = double.parse(txtAltura.text);
-                //     double imc = peso / pow(altura, 2);
-                //     _resultado = "Resultado\nIMC= ${imc}";
-                //   });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
               },
               child: Padding(
                 padding: EdgeInsets.only(top: 70.0),
@@ -166,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 icon: Icon(
                   icon,
                   size: 22,
-                  color: "#4A65B0".toColor(),
+                  color: Color(0xFF4A65B0),
                 ),
                 border: InputBorder.none,
                 hintText: label),
@@ -177,16 +158,4 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-//    TextField(
-//     keyboardType: TextInputType.emailAddress,
-//     style: TextStyle(fontSize: 24, color: Colors.red[800]),
-//     decoration: InputDecoration(
-//         icon: Icon(Icons.arrow_right, color: Colors.red[800]),
-//         labelText: rotulo,
-//         labelStyle: TextStyle(color: Colors.red[800], fontSize: 16)),
-//     controller: controle,
-//     // validator: (value) {
-//     //   return null;
-//     // },
-//   ),
-// );
+ 

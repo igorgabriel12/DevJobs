@@ -1,4 +1,5 @@
 import 'src/pages/login.dart';
+import 'src/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +15,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),
+      // home: HomeScreen(),
     );
   }
 }

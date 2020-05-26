@@ -1,23 +1,38 @@
 import 'package:flutter/material.dart';
+import '../components/CardWidget.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(children: <Widget>[
+          Container(),
+          Container(),
+          Container(),
+          Container(),
+        ],),
+      ),
       appBar: AppBar(
-        title: Text("Primeirfey5hta Tela"),
+        centerTitle: true,
+        backgroundColor: Color(0xFF1b2b39),
+        title: Text("Home"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              // setState(() {
+              //   txtPeso.text = "";
+              //   txtAltura.text = "";
+              //   _resultado = "";
+              // });
+
+              //print("Icon pressionado!");
+            },
+          ),
+        ],
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text("Abrir"),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {}),
-            );
-          },
-        ),
-      ),
+      body: CarList(),
     );
   }
 }
