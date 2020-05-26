@@ -6,12 +6,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: ListView(children: <Widget>[
-          Container(),
-          Container(),
-          Container(),
-          Container(),
-        ],),
+        child: ListView(
+          children: <Widget>[
+            Container(),
+            Container(),
+            Container(),
+            Container(),
+          ],
+        ),
       ),
       appBar: AppBar(
         centerTitle: true,
