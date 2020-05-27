@@ -18,33 +18,6 @@ class AboutScreen extends StatelessWidget {
           ),
           child: Stack(
             children: <Widget>[
-              // Container(
-              //   color: Colors.red[600],
-              //   child: Padding(
-              //     padding: const EdgeInsets.only(top: 20.0, bottom: 30.0),
-              //     child: Column(
-              //       children: <Widget>[
-              //         Container(
-              //             height: 200.0,
-              //             width: 200.0,
-              //             decoration: BoxDecoration(
-              //                 boxShadow: [
-              //                   BoxShadow(
-              //                     color: Colors.black,
-              //                     // blurRadius: 5.0,
-              //                   ),
-              //                 ],
-              //                 color: Colors.white,
-              //                 borderRadius:
-              //                     BorderRadius.all(Radius.circular(100.0))),
-              //             child: CircleAvatar(
-              //                 radius: 20,
-              //                 backgroundImage: NetworkImage(
-              //                     "https://s2.glbimg.com/Bu6upvmSg6SRv0za635uXphThKo=/620x430/e.glbimg.com/og/ed/f/original/2020/03/28/mercado-livre.jpg"))),
-              //       ],
-              //     ),
-              //   ),
-              // ),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,13 +25,10 @@ class AboutScreen extends StatelessWidget {
                       topLeft: Radius.circular(20.0),
                       topRight: Radius.circular(20.0)),
                 ),
-                // margin: const EdgeInsets.only(top: 220),
-                // height: 260,
                 child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 20),
                     child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
                           padding:
@@ -87,20 +57,10 @@ class AboutScreen extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: Text(
-                            "Your Profile",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(bottom: 10),
                           child: Row(
                             children: <Widget>[
                               Text(
-                                "Name: ",
+                                "Nome: ",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -119,7 +79,7 @@ class AboutScreen extends StatelessWidget {
                           child: Row(
                             children: <Widget>[
                               Text(
-                                "E-mail: ",
+                                "Código: ",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -127,45 +87,7 @@ class AboutScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "igor.gabriel.pereira@email.com",
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Row(
-                            children: <Widget>[
-                              Text(
-                                "Address: ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.grey[500],
-                                ),
-                              ),
-                              Text(
-                                "Ribeirão Preto, SP",
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Row(
-                            children: <Widget>[
-                              Text(
-                                "Skills: ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.grey[500],
-                                ),
-                              ),
-                              Text(
-                                "JavaScript, Java, C++, PHP, Dart",
+                                "825.399",
                                 style: TextStyle(fontSize: 16),
                               ),
                             ],
@@ -177,7 +99,7 @@ class AboutScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "About Me: ",
+                                "Tema: ",
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -185,7 +107,27 @@ class AboutScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Mussum Ipsum, cacilds vidis litrenean aliquam molestie leo, vitae iaculis nisl. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Suco de cevadiss deixa as pessoas mais interessantis.",
+                                "Visualizador de vagas de empregos para programadores.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                "Objetivo: ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.grey[500],
+                                ),
+                              ),
+                              Text(
+                                "Possibilitar à programadores a visualização de vagas de emprego, disponíveis pela API do github, para que estes possam vem com maior facilidade as vagas e possam obter mais detalhes sobre as mesmas.",
                                 style: TextStyle(fontSize: 16),
                               ),
                             ],

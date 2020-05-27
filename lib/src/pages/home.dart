@@ -3,6 +3,7 @@ import '../components/CardWidget.dart';
 import '../components/DrawerButtonWidget.dart';
 import 'package:dev_jobs/src/pages/about.dart';
 import 'package:dev_jobs/src/pages/profile.dart';
+import 'package:dev_jobs/src/pages/login.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -45,6 +46,26 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => AboutScreen()),
+              );
+            }),
+            DrawerButton("Exit App", Icon(Icons.exit_to_app), () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => AlertDialog(
+                          title: Text("Atenção!"),
+                          content: Text(
+                              "Tem certeza que deseja sair do aplicativo?"),
+                          actions: [
+                            FlatButton(onPressed: () {}, child: Text("Cancel")),
+                            FlatButton(
+                                onPressed: () {
+                                  LoginScreen();
+                                },
+                                child: Text("Yes"))
+                          ],
+                          // elevation: 5,
+                        )),
               );
             })
           ],
