@@ -38,8 +38,8 @@ class ProfileScreen extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(100.0))),
                         child: CircleAvatar(
                             radius: 20,
-                            backgroundImage: NetworkImage(
-                                "https://avatars0.githubusercontent.com/u/15963786?s=460&u=c0be7b89d0cccdbc0aec6c2acb5357c8ad7d1496&v=4"))),
+                            backgroundImage:
+                                AssetImage("assets/images/15963786.png"))),
                   ],
                 ),
               ),

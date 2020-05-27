@@ -24,8 +24,8 @@ class CarList extends StatelessWidget {
                         height: 55.0,
                         child: Hero(
                           tag: "teste $index",
-                          child: Image.network(
-                            "https://s2.glbimg.com/Bu6upvmSg6SRv0za635uXphThKo=/620x430/e.glbimg.com/og/ed/f/original/2020/03/28/mercado-livre.jpg",
+                          child: Image.asset(
+                            "assets/images/Clock.jpg",
                           ),
                         )),
                     Padding(
