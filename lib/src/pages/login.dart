@@ -1,5 +1,6 @@
-import 'package:dev_jobs/src/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:dev_jobs/src/pages/home.dart';
+import 'package:dev_jobs/src/pages/signin.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -113,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => SignInScreen()),
                 );
               },
               child: Padding(
@@ -157,5 +158,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
- 
