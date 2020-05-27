@@ -76,9 +76,3 @@ class CarList extends StatelessWidget {
     );
   }
 }
-
-//  Center(
-//                     child: Text(
-//                   "Item ${index + 1}",
-//                   style: TextStyle(fontSize: 24),
-//                 ))

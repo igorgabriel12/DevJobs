@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../components/CardWidget.dart';
+import '../components/DrawerButtonWidget.dart';
+import 'package:dev_jobs/src/pages/about.dart';
+import 'package:dev_jobs/src/pages/profile.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,10 +11,42 @@ class HomeScreen extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            Container(),
-            Container(),
-            Container(),
-            Container(),
+            Container(
+              height: 55.0,
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              color: Color(0xFF1b2b39),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                      height: 35.0,
+                      child: Image.asset(
+                        "assets/images/github_logo.png",
+                        scale: 1.8,
+                      )),
+                  SizedBox(width: 10),
+                  Text(
+                    "GitJobs",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            DrawerButton("Profile", Icon(Icons.face), () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()),
+              );
+            }),
+            DrawerButton("About", Icon(Icons.device_unknown), () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutScreen()),
+              );
+            })
           ],
         ),
       ),
