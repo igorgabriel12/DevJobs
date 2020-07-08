@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dev_jobs/src/service/VagaService.dart';
 import 'package:flutter/material.dart';
 import 'package:dev_jobs/src/pages/home.dart';
 import 'package:dev_jobs/src/pages/signin.dart';
@@ -8,6 +10,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  var db = Firestore.instance;
+//recuperar um único documento da Coleção
+
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   TextEditingController email = TextEditingController();
@@ -81,10 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
-                      );
+                      _checkUser();
                     },
                     child: Container(
                       alignment: Alignment.center,
@@ -156,5 +158,25 @@ class _LoginScreenState extends State<LoginScreen> {
         ))
       ],
     );
+  }
+
+  _checkUser() async {
+    await db.collection("users").getDocuments().then((QuerySnapshot snapshot) {
+      // Para a validação assume-se a existencia
+      // de um usuário teste@teste.com e senha 123456
+      snapshot.documents.forEach((doc) {
+        var user = doc.data;
+        if (user['password'] == password.text && user['email'] == email.text) {
+          print('ta logando');
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    HomeScreen(vagas: VagaService().getVagas())),
+          );
+        }
+      });
+    });
   }
 }

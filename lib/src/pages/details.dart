@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
   final String tag;
-  const DetailsScreen({Key key, this.tag = ""}) : super(key: key);
+  final Object vaga;
+  const DetailsScreen({Key key, this.tag = "", this.vaga}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print("Vaga: ");
+    print(vaga);
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF1b2b39),
@@ -39,7 +42,7 @@ class DetailsScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Text(
-                          "Título da vaga",
+                          vaga,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,

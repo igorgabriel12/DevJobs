@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dev_jobs/src/service/VagaService.dart';
 import 'package:flutter/material.dart';
 import 'package:dev_jobs/src/pages/home.dart';
 
@@ -7,6 +9,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreen extends State<SignInScreen> {
+  var db = Firestore.instance;
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   TextEditingController name = TextEditingController();
@@ -44,28 +47,28 @@ class _SignInScreen extends State<SignInScreen> {
                         horizontal: 15, vertical: 20),
                     child: Column(
                       children: <Widget>[
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 30.0),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  height: 120.0,
-                                  width: 120.0,
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black,
-                                          // blurRadius: 5.0,
-                                        ),
-                                      ],
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(100.0))),
-                                  child: Icon(Icons.add_a_photo)),
-                            ],
-                          ),
-                        ),
+                        // Padding(
+                        //   padding:
+                        //       const EdgeInsets.only(top: 20.0, bottom: 30.0),
+                        //   child: Column(
+                        //     children: <Widget>[
+                        //       Container(
+                        //           height: 120.0,
+                        //           width: 120.0,
+                        //           decoration: BoxDecoration(
+                        //               boxShadow: [
+                        //                 BoxShadow(
+                        //                   color: Colors.black,
+                        //                   // blurRadius: 5.0,
+                        //                 ),
+                        //               ],
+                        //               color: Colors.white,
+                        //               borderRadius: BorderRadius.all(
+                        //                   Radius.circular(100.0))),
+                        //           child: Icon(Icons.add_a_photo)),
+                        //     ],
+                        //   ),
+                        // ),
                         Column(
                           children: <Widget>[
                             _entradaDados('Name', name, Icons.face),
@@ -112,12 +115,7 @@ class _SignInScreen extends State<SignInScreen> {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) {
-                                    HomeScreen();
-                                  }),
-                                );
+                                _saveUser();
                               },
                               child: Container(
                                 alignment: Alignment.center,
@@ -176,5 +174,23 @@ class _SignInScreen extends State<SignInScreen> {
         ))
       ],
     );
+  }
+
+  _saveUser() async {
+    if (password.text == confirm_password.text) {
+      await db.collection("users").document(email.text).setData({
+        "name": name.text,
+        "email": email.text,
+        "aboutme": aboutme.text,
+        "skills": skills.text,
+        "password": password.text
+      });
+      print("criou");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => HomeScreen(vagas: VagaService().getVagas())),
+      );
+    }
   }
 }
